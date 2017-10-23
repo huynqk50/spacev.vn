@@ -1,0 +1,57 @@
+# yii console command
+
+# phpstorm project files
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+/backend/web/uploads/
+/frontend/web/images/2016/
+/common/runtime/file-dependency/
+/frontend/web/images/2015-11/
+/frontend/web/images/2015-10/
+/frontend/web/images/2015-09/
+/frontend/web/images/2015-08/
+/frontend/web/images/2015-05/
+/frontend/web/images/2015-07/
+/frontend/web/images/2015-06/
+/frontend/web/images/2016-07/
+/common/runtime/
+/frontend/web/images/201601/
+/frontend/web/images/201505/
+/frontend/web/images/201510/
+/frontend/web/images/201511/
+/frontend/web/images/201512/
+/frontend/web/images/201506/
+/frontend/web/images/201607/
+/frontend/web/images/201508/
+/frontend/web/images/201509/
+/frontend/web/images/201608/
+/frontend/web/images/201602/
+/frontend/web/images/201504/
+/frontend/web/images/201603/
+/frontend/web/images/201604/
+/frontend/web/images/201605/
+/frontend/web/images/201606/
