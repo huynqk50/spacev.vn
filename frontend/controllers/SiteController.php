@@ -82,27 +82,27 @@ class SiteController extends BaseController
     {
         $this->link_canonical = Url::home(true);
 
-        $featured_news = array_merge(
-            Article::find()->where(['status' => Article::STATUS_HOT])
-                ->orderBy('published_at desc')->limit(1)->allPublished(),
-
-            Article::find()->where(['status' => Article::STATUS_FEATURED])
-                ->orderBy('published_at desc')->limit(11)->allPublished()
-        );
-
-        $football_teams = ArticleCategory::findAllByTypes([ArticleCategory::TYPE_FOOTBALL_TEAM]);
-
-        $categories = [];
-        foreach (ArticleCategory::indexData() as $item) {
-            if (count($item->findChildren()) == 0) {
-                $categories[] = $item;
-            }
-        }
+//        $featured_news = array_merge(
+//            Article::find()->where(['status' => Article::STATUS_HOT])
+//                ->orderBy('published_at desc')->limit(1)->allPublished(),
+//
+//            Article::find()->where(['status' => Article::STATUS_FEATURED])
+//                ->orderBy('published_at desc')->limit(11)->allPublished()
+//        );
+//
+//        $football_teams = ArticleCategory::findAllByTypes([ArticleCategory::TYPE_FOOTBALL_TEAM]);
+//
+//        $categories = [];
+//        foreach (ArticleCategory::indexData() as $item) {
+//            if (count($item->findChildren()) == 0) {
+//                $categories[] = $item;
+//            }
+//        }
 
         return $this->render('index', [
-            'featured_news' => $featured_news,
-            'football_teams' => $football_teams,
-            'categories' => $categories,
+//            'featured_news' => $featured_news,
+//            'football_teams' => $football_teams,
+//            'categories' => $categories,
         ]);
     }
     

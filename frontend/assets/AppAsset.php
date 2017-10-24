@@ -15,12 +15,22 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     
     public $css = [
-        'css/main.min.css',
+        'css/bootstrap.min.css',
+        'css/font-awesome.min.css',
+        'css/animate.min.css',
+        'css/prettyPhoto.min.css',
+        'css/main.css',
+        'css/responsive.css',
+        
     ];
     
     public $js = [
-        'js/web.js',
+        'js/jquery.js',
+        'js/bootstrap.min.js',
+        'js/jquery.prettyPhoto.js',
+        'js/jquery.isotope.min.js',
         'js/main.js',
+        'js/wow.min.js',
     ];
     
     public $depends = [

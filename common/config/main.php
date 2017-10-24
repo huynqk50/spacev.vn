@@ -8,7 +8,7 @@ return [
         'db' => [
             // database config
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=thethaohangngay_com_vn',
+            'dsn' => 'mysql:host=localhost;dbname=spacev_vn',
             'username' => 'thethao_u',
             'password' => 'd8$#$0+=8bPfDdf#$FD',
 

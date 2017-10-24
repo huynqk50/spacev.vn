@@ -18,7 +18,7 @@ require_once 'meta.php';
 $this->head();
 ?>
 </head>
-<body>
+<body class="homepage">
 <?php
 $this->beginBody();
 require_once 'header.php';
