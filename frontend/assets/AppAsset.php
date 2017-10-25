@@ -18,7 +18,7 @@ class AppAsset extends AssetBundle
         'css/bootstrap.min.css',
         'css/font-awesome.min.css',
         'css/animate.min.css',
-        'css/prettyPhoto.min.css',
+        'css/prettyPhoto.css',
         'css/main.css',
         'css/responsive.css',
         

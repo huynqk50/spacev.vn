@@ -1,7 +1,6 @@
 <?php
 
 use frontend\controllers\PurchaseOrderController;
-use frontend\models\GeneralInfo;
 use frontend\models\Menu;
 use frontend\models\SiteParam;
 use yii\helpers\Url;
@@ -15,16 +14,16 @@ $cart_count = count($cart);
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  +0123 456 70 90</p></div>
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i><?= ($p = SiteParam::findOneByName(SiteParam::PARAM_PHONE_NUMBER)) ? "$p->value" : 'javascript:;'?></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="<?= SiteParam::findOneByName(SiteParam::facebook_link)->value?>"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="<?= SiteParam::findOneByName(SiteParam::twitter_link)->value?>"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="<?= SiteParam::findOneByName(SiteParam::linkedin_link)->value?>"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="<?= SiteParam::findOneByName(SiteParam::dribbble_link)->value?>"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="<?= SiteParam::findOneByName(SiteParam::skype_link)->value?>"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="<?= SiteParam::findOneByName(SiteParam::PARAM_FACEBOOK)->value?>"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="<?= SiteParam::findOneByName(SiteParam::PARAM_TWITTER)->value?>"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="<?= SiteParam::findOneByName(SiteParam::PARAM_LINKED_IN)->value?>"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="<?= SiteParam::findOneByName(SiteParam::PARAM_DRIBBBLE)->value?>"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="<?= SiteParam::findOneByName(SiteParam::PARAM_SKYPE)->value?>"><i class="fa fa-skype"></i></a></li>
                             </ul>
                             <div class="search">
                                 <form role="form">
@@ -52,6 +51,11 @@ $cart_count = count($cart);
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
+                         <?php
+                foreach ($menu as $item) {
+                    $children = $item->getChildren();
+                    ?>
+                    <li<?= $item->isCurrent() ? ' class="active"' : '' ?>>
                         <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
@@ -66,31 +70,14 @@ $cart_count = count($cart);
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="contact-us.html">Contact</a></li>  
+                <?php } ?>
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
 		
     </header><!--/header-->
-<div class="container" id="header">
-    <div class="wrap clr">
-        <!--<div class="nav">
-            <a href="<?/*= ($p = SiteParam::findOneByName(SiteParam::PARAM_PHONE_NUMBER)) ? "tel:$p->value" : 'javascript:;' */?>" title="Hotline">
-                <i class="icon phone-icon"></i>
-                <span class="sm-hidden">Hotline:&nbsp;</span>
-                <b class="text-blue"><?/*= $p ? $p->value : '' */?></b>
-            </a>
-            <a href="<?/*= Url::to(['purchase-order/cart-checkout'], true) */?>" title="Giỏ hàng">
-                <i class="icon cart-icon"></i> Giỏ hàng
-                (<b class="text-blue cart-counter"><?/*= $cart_count */?></b><span class="sm-hidden">&nbsp;sản phẩm</span>)
-            </a>
-        </div>-->
-        <div class="logo-block">
-            <a href="<?= Url::home(true) ?>" title="<?= Yii::$app->name ?>"><i class="icon logo-icon"></i></a>
-        </div>
-    </div>
-</div>
 <div class="container" id="top-bar">
     <div class="wrap clr">
         <div class="menu clr">

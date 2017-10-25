@@ -1,6 +1,7 @@
 <?php
 use frontend\models\Article;
 use frontend\models\ArticleCategory;
+return;
 ?>
 <div class="left">
     <section id="home-featured" class="clr aspect-ratio _16x9">

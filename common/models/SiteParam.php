@@ -1,7 +1,9 @@
 <?php
+
 namespace common\models;
 
-class SiteParam extends MyActiveRecord{
+class SiteParam extends MyActiveRecord {
+
     const PARAM_PHONE_NUMBER = 'phone_number';
     const PARAM_EMAIL = 'emaill';
     const PARAM_ADDRESS = 'address';
@@ -13,7 +15,9 @@ class SiteParam extends MyActiveRecord{
     const PARAM_PINGTEREST = 'pingterest';
     const PARAM_GOOGLE_MAP = 'google_map';
     const PARAM_SKYPE = 'skype';
-    
+    const PARAM_LINKED_IN = 'linkedin';
+    const PARAM_DRIBBBLE = 'dribbble';
+
     public static $params = [
         self::PARAM_PHONE_NUMBER => 'Số điện thoại',
         self::PARAM_EMAIL => 'Email',
@@ -26,5 +30,8 @@ class SiteParam extends MyActiveRecord{
         self::PARAM_PINGTEREST => 'Pingterest',
         self::PARAM_GOOGLE_MAP => 'Google map',
         self::PARAM_SKYPE => 'Nick skype',
+        self::PARAM_LINKED_IN => 'linkedin',
+        self::PARAM_DRIBBBLE => 'dribbble',
     ];
+
 }
