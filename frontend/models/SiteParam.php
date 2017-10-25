@@ -13,12 +13,6 @@ use Yii;
  */
 class SiteParam extends \common\models\SiteParam
 {
-    public static $skype_link = '';
-    public static $twitter_link = '';
-    public static $linkedin_link = '';
-    public static $dribbble_link = '';
-    public static $skype_link = '';
-    
     private static $_indexData;
     
     public static function indexData()
