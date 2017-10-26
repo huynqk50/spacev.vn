@@ -2,16 +2,13 @@
 namespace frontend\controllers;
 
 use frontend\models\AccountActivationRequestForm;
-use frontend\models\Article;
-use frontend\models\ArticleCategory;
 use frontend\models\ContactForm;
 use frontend\models\Customer;
+use frontend\models\Info;
 use frontend\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
-use frontend\models\ProductCategory;
 use frontend\models\Redirect;
 use frontend\models\ResetPasswordForm;
-use frontend\models\SlideshowItem;
 use frontend\models\UrlParam;
 use Yii;
 use yii\base\InvalidParamException;
@@ -20,6 +17,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\NotFoundHttpException;
+use const YII_ENV_TEST;
 
 /**
  * Site controller
@@ -180,7 +178,9 @@ class SiteController extends BaseController
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $model = Info::find()->where(['type' => Info::TYPE_PROFILE])->one();
+//        $members = User
+        return $this->render('about', ['model' => $model]);
     }
 
     /**

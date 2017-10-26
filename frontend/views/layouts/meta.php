@@ -31,7 +31,7 @@ use yii\helpers\Url;
 <link rel="canonical" href="<?= $this->context->link_canonical ?>">
 <link rel="image_src" type="image/jpeg" href="<?= $this->context->meta_image ?>">
 <link rel="alternate" media="handheld" href="<?= $this->context->link_canonical ?>">
-<link rel="shortcut icon" href="<?= Url::home(true) ?>favicon.ico">
+<link rel="shortcut icon" href="/images/ico/favicon.ico">
 <!-- Chrome for Android theme color -->
 <meta name="theme-color" content="#00BECC">
 <meta name="REVISIT-AFTER" content="1 DAYS">

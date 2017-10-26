@@ -10,7 +10,7 @@ $params = array_merge(
 );
 
 return [
-    'name' => 'T.T.H.N',
+    'name' => 'SpaceV',
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',

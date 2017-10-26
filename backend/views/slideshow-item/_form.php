@@ -19,7 +19,7 @@ use janisto\timepicker\TimePicker;
 <?= $form->field($model, 'image', ['template' => '{label}<div class="PictureCutImageContainer" ' . (!$model->isNewRecord ? 'style="background-image:url(' . $model->getImage() . ')"' : '') . '></div>{input}{error}{hint}'])->textInput(['maxlength' => true, 'readonly' => true]) ?>
 <?php // echo $form->field($model, 'image_path')->textInput(['maxlength' => true, 'readonly' => true]) ?>
 <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
-<?= $form->field($model, 'caption')->textInput(['maxlength' => true]) ?>
+<?= $form->field($model, 'caption')->textarea(['maxlength' => true]) ?>
 <?= $form->field($model, 'sort_order')->textInput() ?>
 <?= $form->field($model, 'is_active')->checkbox() ?>
 <?php // $model->created_at = $model->isNewRecord ? date('Y-m-d H:i:s') : date('Y-m-d H:i:s', $model->created_at) ?>

@@ -48,6 +48,8 @@ return [
                 // Home
                 ['pattern' => '', 'route' => 'site/index'],
                 ['pattern' => '/', 'route' => 'site/index'],
+                
+                ['pattern' => 've-chung-toi.html', 'route' => 'site/about'],
                 //
 //                ['pattern' => 'cua-hang.html', 'route' => 'store/index'],
 //                ['pattern' => 'test', 'route' => 'test/index'],

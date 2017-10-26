@@ -87,14 +87,40 @@ class BaseController extends Controller {
             'parent_key' => null
         ];
         
-        $data2 = [];
-
+        
+        $data1['aboutus'] = [
+            'label' => 'Giới thiệu',
+            'url' => Url::to(['site/about']),
+            'parent_key' => null
+        ];
+        
+        $data1['services'] = [
+            'label' => 'Dịch vụ',
+            'url' => Url::home(true),
+            'parent_key' => null
+        ];
+        
+        $data1['news'] = [
+            'label' => 'Tin tức',
+            'url' => Url::home(true),
+            'parent_key' => null
+        ];
+        
+        $data1['contact'] = [
+            'label' => 'Liên hệ',
+            'url' => Url::home(true),
+            'parent_key' => null
+        ];
+        
+        
+//        $data2 = [];
+//
         $article_cats = ArticleCategory::indexData();
         foreach ($article_cats as $item) {
-            $data2[$item->id] = [
+            $data1[$item->id] = [
                 'label' => $item->name,
                 'url' => $item->getLink(),
-                'parent_key' => $item->parent_id
+                'parent_key' => 'news'
             ];
         }
 
@@ -111,7 +137,7 @@ class BaseController extends Controller {
             ]
         ];
         
-        Menu::init(['one' => $data1, 'two' => $data2], $options);
+        Menu::init(['one' => $data1], $options);
         
 //        echo '<!--';
 //        var_dump(Yii::$app->requestedRoute);

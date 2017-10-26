@@ -55,8 +55,22 @@ $cart_count = count($cart);
                 foreach ($menu as $item) {
                     $children = $item->getChildren();
                     ?>
-                    <li<?= $item->isCurrent() ? ' class="active"' : '' ?>>
-                        <li class="active"><a href="index.html">Home</a></li>
+                    <li class="<?= $item->isCurrent() ? ' active' : '' ?> <?= empty($children) ? '' : ' dropdown'  ?>">
+                      <?php  echo $item->a();
+                      if (empty($children)) { ?>
+                        <ul class="dropdown-menu">
+                            <?php
+                                foreach ($children as $child) {
+                                    ?>
+                                    <li<?= $child->isCurrent() ? ' class="active"' : '' ?>>
+                                        <?= $child->a() ?>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                        </ul>
+                      <?php } ?>
+<!--                        <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -70,7 +84,7 @@ $cart_count = count($cart);
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>  
+                        <li><a href="contact-us.html">Contact</a></li>  -->
                 <?php } ?>
                     </ul>
                 </div>
@@ -78,87 +92,3 @@ $cart_count = count($cart);
         </nav><!--/nav-->
 		
     </header><!--/header-->
-<div class="container" id="top-bar">
-    <div class="wrap clr">
-        <div class="menu clr">
-            <button class="menu-toggle" onclick="
-                web.toggleClassName(document.querySelector('#top-bar .menu'), 'active');
-                document.querySelector('#top-bar .search-box').classList.remove('active');
-            ">
-                <i class="icon menu-icon">
-                    <b></b>
-                    <b></b>
-                    <b></b>
-                </i>
-                <span>&nbsp;<?= ($m = Menu::getCurrent()) ? $m->label : 'Danh mục' ?></span>
-            </button>
-            <ul>
-                <?php
-                foreach ($menu as $item) {
-                    $children = $item->getChildren();
-                    ?>
-                    <li<?= $item->isCurrent() ? ' class="active"' : '' ?>>
-                        <?php
-                        if (empty($children)) {
-                            echo $item->a();
-                        } else {
-                            ?>
-                            <button class="menu-toggle" onclick="web.toggleClassName(this, 'active')"></button>
-                            <?= $item->a() ?>
-                            <ul>
-                                <?php
-                                foreach ($children as $child) {
-                                    ?>
-                                    <li<?= $child->isCurrent() ? ' class="active"' : '' ?>>
-                                        <?php
-                                        $grandchildren = $child->getChildren();
-                                        if (empty($grandchildren)) {
-                                            echo $child->a();
-                                        } else {
-                                        ?>
-                                            <button class="menu-toggle" onclick="web.toggleClassName(this, 'active')"></button>
-                                            <?= $child->a() ?>
-                                            <ul>
-                                                <?php
-                                                foreach ($grandchildren as $grandchild) {
-                                                    echo ($grandchild->isCurrent() ? '<li class="active">' : '<li>') . "{$grandchild->a()}</li>";
-                                                }
-                                                ?>
-                                            </ul>
-                                        <?php
-                                        }
-                                        ?>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
-                            </ul>
-                            <?php
-                        }
-                        ?>
-                    </li>
-                    <?php
-                }
-                ?>
-            </ul>
-        </div>
-        <div class="top-modal" onclick="this.previousElementSibling.classList.remove('active')"></div>
-        <div class="search-box">
-            <gcse:search></gcse:search>
-        </div>
-        <div class="top-modal" onclick="this.previousElementSibling.classList.remove('active')"></div>
-        <button class="search-toggle" onclick="
-                        web.toggleClassName(document.querySelector('#top-bar .search-box'), 'active');
-                        document.querySelector('#top-bar .menu').classList.remove('active');
-                        /* @TODO: Focus on input */
-                        document.querySelector('.search-box .gsc-search-box-tools .gsc-search-box input.gsc-input').focus();
-                    "><i class="icon magnifier-icon"></i>
-        </button>
-        <script>
-            window.addEventListener("load", function () {
-                var search_input = document.querySelector('.search-box .gsc-search-box-tools .gsc-search-box input.gsc-input');
-                search_input.placeholder = 'Tìm kiếm...';
-            });
-        </script>
-    </div>
-</div>
