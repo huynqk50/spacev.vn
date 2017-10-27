@@ -15,11 +15,11 @@ class LoginForm extends \common\models\LoginForm
     public function rules()
     {
         return array_merge(parent::rules(), [
-            [   ['reCaptcha'],
-                \himiklab\yii2\recaptcha\ReCaptchaValidator::className(),
-                'secret' => '6Lew-x4UAAAAAMO2AkKt5eHRLC6e0grKw6QV82te',
-                'uncheckedMessage' => 'Please confirm that you are not a bot.'
-            ]
+//            [   ['reCaptcha'],
+//                \himiklab\yii2\recaptcha\ReCaptchaValidator::className(),
+//                'secret' => '6Lew-x4UAAAAAMO2AkKt5eHRLC6e0grKw6QV82te',
+//                'uncheckedMessage' => 'Please confirm that you are not a bot.'
+//            ]
         ]);
     }
 }
