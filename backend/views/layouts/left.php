@@ -52,15 +52,15 @@ use yii\helpers\Url;
                 </ul>
             </li>
             <!-- Sản phẩm -->
-            <!--<li class="treeview <?/*= in_array(Yii::$app->controller->id, ['product', 'product-image', 'product-customization']) ? 'active' : '' */?>">
+            <li class="treeview <?= in_array(Yii::$app->controller->id, ['product', 'product-image', 'product-customization']) ? 'active' : '' ?>">
                 <a href="#">
                     <i class="fa fa-diamond"></i> <span>Sản phẩm</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?/*= Yii::$app->controller->id == 'product' && Yii::$app->controller->action->id == 'index' ? 'active' : '' */?>"><a href="<?/*= Yii::$app->urlManager->createUrl('product/index') */?>"><i class="fa fa-circle-o"></i> Danh sách</a></li>
-                    <li class="<?/*= Yii::$app->controller->id == 'product' && Yii::$app->controller->action->id == 'create' ? 'active' : '' */?>"><a href="<?/*= Yii::$app->urlManager->createUrl('product/create') */?>"><i class="fa fa-circle-o"></i> Thêm mới</a></li>
+                    <li class="<?= Yii::$app->controller->id == 'product' && Yii::$app->controller->action->id == 'index' ? 'active' : '' ?>"><a href="<?= Yii::$app->urlManager->createUrl('product/index') ?>"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+                    <li class="<?= Yii::$app->controller->id == 'product' && Yii::$app->controller->action->id == 'create' ? 'active' : '' ?>"><a href="<?= Yii::$app->urlManager->createUrl('product/create') ?>"><i class="fa fa-circle-o"></i> Thêm mới</a></li>
                 </ul>
-            </li>-->
+            </li>
             <!-- Tùy chọn và thuộc tính SP -->
             <!--<li class="treeview <?/*= in_array(Yii::$app->controller->id, ['product-option', 'product-option-group', 'product-attribute', 'product-attribute-group']) ? 'active' : '' */?>">
                 <a href="#">

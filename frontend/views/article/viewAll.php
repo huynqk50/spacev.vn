@@ -5,16 +5,19 @@ use frontend\models\UrlParam;
 use yii\helpers\Url;
 
 ?>
-<div class="left">
-    <section>
-        <h2 class="title"><?= $title ?></h2>
-        <div class="content details-view d37 aspect-ratio _16x9 news-text">
-            <ul>
+<section id="blog" class="container">
+        <div class="center">
+            <h2><?= $title ?></h2>
+            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+        </div>
+        <div class="blog">
+            <div class="row">
+                 <div class="col-md-8">
                 <?=
                 $this->render('items', ['models' => $models, 'image_size' => Article::IMAGE_MEDIUM])
                 ?><!--
             No space here
-            --></ul>
+                --></div></div></div>
             <?php
             if ($has_more) {
                 echo '<button type="button" class="see-more" onclick="seeMore(this.previousElementSibling, this)">Xem thêm</button>';
@@ -22,8 +25,7 @@ use yii\helpers\Url;
             ?>
         </div>
     </section>
-</div>
-<?= $this->render('//layouts/aside') ?>
+<?php // echo $this->render('//layouts/aside') ?>
 <script>
     function seeMore(container, button) {
         var xhttp = new XMLHttpRequest();

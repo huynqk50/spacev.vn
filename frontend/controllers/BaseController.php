@@ -96,15 +96,21 @@ class BaseController extends Controller {
         
         $data1['services'] = [
             'label' => 'Dịch vụ',
+            'url' => Url::to(['site/service']),
+            'parent_key' => null
+        ];
+        
+        $data1['products'] = [
+            'label' => 'Sản phẩm',
             'url' => Url::home(true),
             'parent_key' => null
         ];
         
-        $data1['news'] = [
-            'label' => 'Tin tức',
-            'url' => Url::home(true),
-            'parent_key' => null
-        ];
+//        $data1['news'] = [
+//            'label' => 'Tin tức',
+//            'url' => ,
+//            'parent_key' => null
+//        ];
         
         $data1['contact'] = [
             'label' => 'Liên hệ',

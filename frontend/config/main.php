@@ -50,6 +50,7 @@ return [
                 ['pattern' => '/', 'route' => 'site/index'],
                 
                 ['pattern' => 've-chung-toi.html', 'route' => 'site/about'],
+                ['pattern' => 'dich-vu.html', 'route' => 'site/service'],
                 //
 //                ['pattern' => 'cua-hang.html', 'route' => 'store/index'],
 //                ['pattern' => 'test', 'route' => 'test/index'],
