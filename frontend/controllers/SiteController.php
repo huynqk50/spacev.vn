@@ -179,7 +179,7 @@ class SiteController extends BaseController
     public function actionAbout()
     {
         $model = Info::find()->where(['type' => Info::TYPE_PROFILE])->one();
-//        $members = User
+        $members = User::find();
         return $this->render('about', ['model' => $model]);
     }
 
