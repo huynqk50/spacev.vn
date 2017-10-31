@@ -139,77 +139,47 @@ $share_box = "<ul class=\"multi-share-box\">
         }
     }
 </style>
-<div class="left clr news-page">
-    <div class="left">
-        <section class="news news-text">
-            <h2 class="name"><?= $model->name ?></h2>
-            <div class="info">
-                <em><?= $model->date() ?></em>
-                | <em><span class="icon comment-icon"></span> <?= $model->comment_count ?> bình luận</em>
-                <!--| <em><span class="icon view-icon"></span> <span class="number-kmb"><?= $model->view_count ?></span> xem</em>-->
-            </div>
-            <?= $share_box ?>
-            <div class="intro">
-                <?= $model->description ?>
-            </div>
-            <article class="content fit-content content-popup-images">
-                <?= $model->content ?>
-            </article>
-            <?= $share_box ?>
-        </section>
-        <section class="hot-news">
-            <div class="title">Tin tức mới nhất</div>
-            <div class="content clr news-text details-view d41 aspect-ratio _16x9">
-                <?php
-                $li = function ($item) {
-                    return "<li>{$item->a(['class' => 'clr'],
-                        '<div class="image"><div class="item-view"><div class="img-wrap">'
-                        . $item->img([], Article::IMAGE_SMALL) . '</div></div></div>'
-                        . '<h3 class="name">' . $item->name . '</h3>'
-                        )}</li>";
-                };
-                ?>
-                <ul class="left">
-                <?php
-                for ($i = 0; $i < 10; $i+=2) {
-                    if (isset($hot_items[$i])) {
-                        echo $li($hot_items[$i]);
-                    }
-                }
-                ?>
-                </ul>
-                <ul class="right">
-                <?php
-                for ($i = 1; $i < 10; $i+=2) {
-                    if (isset($hot_items[$i])) {
-                        echo $li($hot_items[$i]);
-                    }
-                }
-                ?>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <?= $this->render('//modules/comment') ?>
-        </section>
-    </div>
-    <div class="right">
-        <div class="rel-news">
-            <div class="title"><strong>Tin liên quan</strong></div>
-            <ul>
-                <?php
-                $i = 0;
-                foreach (array_slice($related_items, 0, 5) as $item) {
-                    $i++;
-                    echo '<li>';
-                    if ($i == 1) {
-                        echo "<div class=\"image\"><div class=\"item-view aspect-ratio _16x9\"><div class=\"img-wrap\">{$item->img()}</div></div></div>";
-                    }
-                    echo $item->a() . '</li>';
-                }
-                ?>
-            </ul>
-        </div>
-    </div>
-</div>
-<?= $this->render('//layouts/aside') ?>
+<section id="blog" class="container">
+<!--        <div class="center">
+            <h2>Blogs</h2>
+            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+        </div>-->
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <?= $model->img(["class"=>"img-responsive img-blog", 'width' => '100%'], isset($image_size) ? $image_size : null)?>
+                            <div class="row">  
+                                <div class="col-xs-12 col-sm-2 text-center">
+                                    <div class="entry-meta">
+                                        <span id="publish_date" ><?= date('d/m/Y', $model->published_at)?></span>
+                                    <span><i class="fa fa-user"></i> <a href="#"><?= $model->auth_alias == '' ? 'Admin' : $model->auth_alias?></a></span>
+                                    <span><i class="fa fa-comment"></i> <a href="#"><?= $model->comment_count?> Comments</a></span>
+                                   
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 blog-content">
+                                    <h2><?= $model->name ?></h2>
+                                    <?= $model->content ?>
+
+                                    <div class="post-tags">
+                                        <strong>Tag:</strong> <!--<a href="#">Cool</a> / <a href="#">Creative</a> / <a href="#">Dubttstep</a>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div><!--/.blog-item-->
+                        
+                    </div><!--/.col-md-8-->
+
+                <?= $this->render('//layouts/aside');?>    
+
+            </div><!--/.row-->
+
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+    
+    
+

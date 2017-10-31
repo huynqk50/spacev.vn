@@ -1,7 +1,8 @@
 <?php
-/* @var $this yii\web\View */
+/* @var $this View */
 
-use yii\helpers\Html;
+use common\models\User;
+use yii\web\View;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -27,50 +28,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h2>Thành viên</h2>
                 <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>-->
             </div>
-
+            
             <div class="row clearfix">
-                <div class="col-md-4 col-sm-6">	
-                    <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img class="media-object" src="images/man1.jpg" alt=""></a>
-                            </div>
-                            <div class="media-body">
-                                <h4>Jhon Doe</h4>
-                                <h5>Founder and CEO</h5>
-                                <ul class="tag clearfix">
-                                    <li class="btn"><a href="#">Web</a></li>
-                                    <li class="btn"><a href="#">Ui</a></li>
-                                    <li class="btn"><a href="#">Ux</a></li>
-                                    <li class="btn"><a href="#">Photoshop</a></li>
-                                </ul>
-
-                                <ul class="social_icons">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div><!--/.media -->
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                    </div>
-                </div><!--/.col-lg-4 -->
-
+                <?php 
+            $mem1 = array_slice($members, 0, 2);
+            foreach ($mem1 as $member) { ?>
 
                 <div class="col-md-4 col-sm-6 col-md-offset-2">	
                     <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                         <div class="media">
                             <div class="pull-left">
-                                <a href="#"><img class="media-object" src="images/man2.jpg" alt=""></a>
+                                <a href="#"><?= $member->img([], User::IMAGE_TINY)?></a>
                             </div>
                             <div class="media-body">
-                                <h4>Jhon Doe</h4>
-                                <h5>Founder and CEO</h5>
+                                <h4><?= $member->lastname . ' '.$member->firstname?></h4>
+                                <!--<h5>Founder</h5>-->
                                 <ul class="tag clearfix">
-                                    <li class="btn"><a href="#">Web</a></li>
-                                    <li class="btn"><a href="#">Ui</a></li>
+                                    <li class="btn"><a href="#">Founder</a></li>
+<!--                                    <li class="btn"><a href="#">Ui</a></li>
                                     <li class="btn"><a href="#">Ux</a></li>
-                                    <li class="btn"><a href="#">Photoshop</a></li>
+                                    <li class="btn"><a href="#">Photoshop</a></li>-->
                                 </ul>
                                 <ul class="social_icons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -79,9 +56,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </ul>
                             </div>
                         </div><!--/.media -->
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <p><?php echo $member->alias ?></p>
                     </div>
-                </div><!--/.col-lg-4 -->					
+                </div><!--/.col-lg-4 -->	
+            <?php } ?>
             </div> <!--/.row -->
             <div class="row team-bar">
                 <div class="first-one-arrow hidden-xs">
@@ -102,21 +80,23 @@ $this->params['breadcrumbs'][] = $this->title;
             </div> <!--skill_border-->       
 
             <div class="row clearfix">   
+                <?php 
+            $mem1 = array_slice($members, 2, 2);
+            foreach ($mem1 as $member) { ?>
                 <div class="col-md-4 col-sm-6 col-md-offset-2">	
-                    <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                         <div class="media">
                             <div class="pull-left">
-                                <a href="#"><img class="media-object" src="images/man3.jpg" alt=""></a>
+                                <a href="#"><?= $member->img([], User::IMAGE_TINY)?></a>
                             </div>
-
                             <div class="media-body">
-                                <h4>Jhon Doe</h4>
-                                <h5>Founder and CEO</h5>
+                                <h4><?= $member->lastname . ' '.$member->firstname?></h4>
+                                <!--<h5>Founder</h5>-->
                                 <ul class="tag clearfix">
-                                    <li class="btn"><a href="#">Web</a></li>
-                                    <li class="btn"><a href="#">Ui</a></li>
+                                    <li class="btn"><a href="#">Founder</a></li>
+<!--                                    <li class="btn"><a href="#">Ui</a></li>
                                     <li class="btn"><a href="#">Ux</a></li>
-                                    <li class="btn"><a href="#">Photoshop</a></li>
+                                    <li class="btn"><a href="#">Photoshop</a></li>-->
                                 </ul>
                                 <ul class="social_icons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -125,34 +105,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </ul>
                             </div>
                         </div><!--/.media -->
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <p><?php echo $member->alias ?></p>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-md-offset-2">
-                    <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img class="media-object" src="images/man4.jpg" alt=""></a>
-                            </div>
-                            <div class="media-body">
-                                <h4>Jhon Doe</h4>
-                                <h5>Founder and CEO</h5>
-                                <ul class="tag clearfix">
-                                    <li class="btn"><a href="#">Web</a></li>
-                                    <li class="btn"><a href="#">Ui</a></li>
-                                    <li class="btn"><a href="#">Ux</a></li>
-                                    <li class="btn"><a href="#">Photoshop</a></li>
-                                </ul>
-                                <ul class="social_icons">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div><!--/.media -->
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                    </div>
-                </div>
+                </div><!--/.col-lg-4 -->
+            <?php } ?>
             </div>	<!--/.row-->
         </div><!--section-->
     </div><!--/.container-->

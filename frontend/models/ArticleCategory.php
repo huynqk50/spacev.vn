@@ -70,7 +70,9 @@ class ArticleCategory extends \common\models\ArticleCategory
     public static function indexData()
     {
         if (self::$_indexData == null) {
-            self::$_indexData = self::find()->indexBy('id')
+//            self::$_indexData = self::find()->indexBy('id')
+//                    ->orderBy('sort_order asc')->allActive();
+            self::$_indexData = self::find()->where(['id' => 262])->indexBy('id')
                     ->orderBy('sort_order asc')->allActive();
         }
         

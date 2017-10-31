@@ -30,7 +30,7 @@ use Yii;
 class User extends \common\models\User
 {
     
-    public static $image_resizes = [[120, 120], [200, 200]];
+    
 
     /**
     * function ->getImage ($suffix, $refresh)
@@ -290,7 +290,7 @@ class User extends \common\models\User
             'firstname' => 'Tên',
             'lastname' => 'Họ',
             'dob' => 'Ngày sinh',
-            'alias' => 'Bút danh',
+            'alias' => 'Quote',
             'gender' => 'Tôi là ...',
             'image' => 'Ảnh đại diện',
             'image_path' => 'Đường dẫn ảnh',

@@ -22,9 +22,14 @@ use yii\web\IdentityInterface;
  */
 class User extends MyActiveRecord implements IdentityInterface
 {
+    
+    public static $image_resizes = [[120, 120], [200, 200]];
+     const IMAGE_TINY = '[120,120]';
+    const IMAGE_SMALL = '[200,200]';
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
     const STATUS_INACTIVE = 11;
+    const ROLE_FOUNDER = 'Founder';
 
     public function statuses()
     {

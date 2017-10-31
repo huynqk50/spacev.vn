@@ -50,13 +50,14 @@ return [
                 ['pattern' => '/', 'route' => 'site/index'],
                 
                 ['pattern' => 've-chung-toi.html', 'route' => 'site/about'],
+                ['pattern' => 'dich-vu.html', 'route' => 'site/service'],
                 //
 //                ['pattern' => 'cua-hang.html', 'route' => 'store/index'],
 //                ['pattern' => 'test', 'route' => 'test/index'],
                 // Contact
 //                ['pattern' => 'contact/create-with-email', 'route' => 'contact/create-with-email'],
 //                ['pattern' => 'contact/ajax-create', 'route' => 'contact/ajax-create'],
-//                ['pattern' => 'lien-he.html', 'route' => 'contact/index'],
+                ['pattern' => 'lien-he.html', 'route' => 'contact/index'],
                 // Purchase order
 //                ['pattern' => 'purchase-order/ajax-create', 'route' => 'purchase-order/ajax-create'],
 //                ['pattern' => 'purchase-order/add-to-cart', 'route' => 'purchase-order/add-to-cart'],

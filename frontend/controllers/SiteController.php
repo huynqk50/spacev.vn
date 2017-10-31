@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\User;
 use frontend\models\AccountActivationRequestForm;
 use frontend\models\ContactForm;
 use frontend\models\Customer;
@@ -153,23 +154,23 @@ class SiteController extends BaseController
      *
      * @return mixed
      */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
+//    public function actionContact()
+//    {
+//        $model = new ContactForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+//            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+//                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+//            } else {
+//                Yii::$app->session->setFlash('error', 'There was an error sending email.');
+//            }
+//
+//            return $this->refresh();
+//        } else {
+//            return $this->render('contact', [
+//                'model' => $model,
+//            ]);
+//        }
+//    }
 
     /**
      * Displays about page.
@@ -179,9 +180,18 @@ class SiteController extends BaseController
     public function actionAbout()
     {
         $model = Info::find()->where(['type' => Info::TYPE_PROFILE])->one();
-        $members = User::find();
-        return $this->render('about', ['model' => $model]);
+        $members = User::find()->leftJoin('auth_assignment', 'auth_assignment.user_id = user.id')->where(['auth_assignment.item_name' => User::ROLE_FOUNDER])->all();
+//        var_dump($members);die();
+        return $this->render('about', ['model' => $model, 'members' => $members]);
     }
+    
+    public function actionService()
+    {
+        $model = Info::find()->where(['type' => Info::TYPE_SERVICES])->one();
+//        var_dump($members);die();
+        return $this->render('service', ['model' => $model]);
+    }
+    
 
     /**
      * Signs user up.

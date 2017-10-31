@@ -21,21 +21,16 @@ return [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@common/mail',
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-//                'host' => 'smtp.gmail.com',
-//                'username' => 'info.quyettran@gmail.com',
-//                'password' => 'eyyjdwlsktrjiaqq',
-//                'port' => 465,
-//                'encryption' => 'ssl',
-                'host' => 'mail.veneto.vn',
-                'username' => 'noreply@veneto.vn',
-                'password' => 'KHJ889@!5njPQR',
-                'port' => 465,
+                //'host' => 'localhost',
+                'host' => 'smtp.gmail.com', // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                'username' => 'mail.vienthong@gmail.com',
+                'password' => 'wmkbcpzgxkcmjefd',
+                'port' => '465', // Port 25 is a very common port too
                 'encryption' => 'ssl',
-            ], 
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',

@@ -76,6 +76,8 @@ use yii\widgets\ActiveForm;
                 'uiColor' => '#E4E4E4',
                 'image_previewText' => '&nbsp;',
                 'filebrowserUploadUrl' => Url::to(['file/ckeditor-upload-image'], true),
+                'allowedContent' => true,
+                
             ],
         ]) ?>
         <div class="form-group">

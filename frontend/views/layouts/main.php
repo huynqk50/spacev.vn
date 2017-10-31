@@ -23,7 +23,7 @@ $this->head();
 $this->beginBody();
 require_once 'header.php';
 if (!in_array(Yii::$app->controller->id, ['site'])) {
-    echo $this->render('//modules/breadcrumb');
+//    echo $this->render('//modules/breadcrumb');
 }
 ?>
 
