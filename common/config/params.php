@@ -14,10 +14,10 @@ return [
     'recaptcha.secret_key' => '',
     'recaptcha.site_key' => '',
     
-    'backend_url' => '//admin.thethaohangngay.com.vn',
-    'frontend_url' => '//thethaohangngay.com.vn',
-    'images_url' => '//thethaohangngay.com.vn/images',
-    'uploads_url' => '//admin.thethaohangngay.com.vn/uploads',
+    'backend_url' => '//admin.spacev.vn',
+    'frontend_url' => '//spacev.vn',
+    'images_url' => '//spacev.vn/images',
+    'uploads_url' => '//admin.spacev.vn/uploads',
     
     'backend_folder' => dirname(dirname(__DIR__)) . '/backend/web',
     'frontend_folder' => dirname(dirname(__DIR__)) . '/frontend/web',
