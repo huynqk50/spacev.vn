@@ -8,7 +8,7 @@ use yii\helpers\Url;
 <section id="blog" class="container">
         <div class="center">
             <h2><?= $title ?></h2>
-            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+            <p class="lead"><?= $category->description ?></p>
         </div>
         <div class="blog">
             <div class="row">
@@ -17,7 +17,9 @@ use yii\helpers\Url;
                 $this->render('items', ['models' => $models, 'image_size' => Article::IMAGE_MEDIUM])
                 ?><!--
             No space here
-                --></div></div></div>
+                --></div>
+            <?= $this->render('//layouts/aside');?>
+            </div></div>
             <?php
             if ($has_more) {
                 echo '<button type="button" class="see-more" onclick="seeMore(this.previousElementSibling, this)">Xem thêm</button>';

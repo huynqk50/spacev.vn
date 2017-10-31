@@ -15,6 +15,7 @@ class ContactForm extends Model
     public $subject;
     public $body;
     public $verifyCode;
+    public $mobile;
 
     /**
      * @inheritdoc
@@ -27,7 +28,8 @@ class ContactForm extends Model
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+//            ['verifyCode', 'captcha'],
+            [['mobile'], 'safe'],
         ];
     }
 
@@ -38,6 +40,11 @@ class ContactForm extends Model
     {
         return [
             'verifyCode' => 'Verification Code',
+            'name' => 'Họ tên',
+            'email' => 'Email',
+            'mobile' => 'Số điện thoại',
+            'subject' => 'Tiêu đề',
+            'body'  => 'Nội dung'
         ];
     }
 

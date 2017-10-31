@@ -50,6 +50,8 @@ class Article extends \common\models\Article
     public $_link;
     public function getLink()
     {
+        $category = $this->findCategory();
+        Yii::error($category);
         if ($this->_link == null) {
             if ($category = $this->findCategory()) {
                 if ($parent_category = $category->findParent()) {

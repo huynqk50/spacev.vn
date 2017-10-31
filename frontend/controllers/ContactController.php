@@ -4,8 +4,8 @@ namespace frontend\controllers;
 
 use common\utils\Json;
 use frontend\models\Contact;
+use frontend\models\ContactForm;
 use Yii;
-use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 
 class ContactController extends BaseController
@@ -13,10 +13,10 @@ class ContactController extends BaseController
 
     public function actionIndex()
     {
-        $this->link_canonical = Url::current([], true);
-        $this->breadcrumbs[] = ['label' => 'Liên hệ', 'url' => $this->link_canonical];
-        
-        return $this->render('index');
+        $model = new ContactForm;
+//        $model = Info::find()->where(['type' => Info::TYPE_CONTACT])->one();
+//        var_dump($members);die();
+        return $this->render('index', ['model' => $model]);
     }
 
     public function actionAjaxCreate()

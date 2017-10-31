@@ -72,7 +72,7 @@ class ArticleCategory extends \common\models\ArticleCategory
         if (self::$_indexData == null) {
 //            self::$_indexData = self::find()->indexBy('id')
 //                    ->orderBy('sort_order asc')->allActive();
-            self::$_indexData = self::find()->where(['id' => 262])
+            self::$_indexData = self::find()->where(['id' => 262])->indexBy('id')
                     ->orderBy('sort_order asc')->allActive();
         }
         

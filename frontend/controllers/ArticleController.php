@@ -163,7 +163,8 @@ class ArticleController extends BaseController
             'title' => $category->name,
             'models' => array_slice($models, 0, self::ITEMS_PER_PAGE),
             'has_more' => isset($models[static::ITEMS_PER_PAGE]),
-            'category_id' => $category->id
+            'category_id' => $category->id,
+            'category' => $category
         ]);
 
     }
