@@ -17,6 +17,8 @@ class Info extends MyActiveRecord {
     const TYPE_PAYMENT_GUIDE = 10;
     const TYPE_PAYMENT_REGULATION = 11;
     const TYPE_SERVICES = 12;
+    const TYPE_PARTNER = 13;
+    const TYPE_BOTTOM_INFO = 14;
     
     public static $types = [
         self::TYPE_FAQ => 'Hỏi đáp',
@@ -31,6 +33,8 @@ class Info extends MyActiveRecord {
         self::TYPE_PAYMENT_GUIDE => 'Hướng dẫn thanh toán',
         self::TYPE_PAYMENT_REGULATION => 'Quy định thanh toán',
         self::TYPE_SERVICES => 'Dịch vụ',
+        self::TYPE_PARTNER => 'Đối tác',
+        self::TYPE_BOTTOM_INFO => 'Chân trang',
     ];
     
     /**
